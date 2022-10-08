@@ -1,0 +1,16 @@
+.asSoon {
+  padding: 30px 200px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.asSoon img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 768px) {
+  .asSoon {
+    padding: 30px 30px;
+  }
+}

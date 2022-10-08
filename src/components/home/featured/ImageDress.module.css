@@ -1,0 +1,60 @@
+.component {
+  position: relative;
+  width: 230px;
+  height: 390px;
+}
+.comHover {
+  width: 230px;
+  margin-bottom: 10px;
+}
+
+.imageDress.imgHover {
+  padding: 10px;
+
+  /* background-color: red; */
+}
+.new.component::after {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 20px;
+  background-color: orangered;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  margin: 10px;
+  color: white;
+}
+.comHover.component:after {
+  margin: 20px;
+}
+
+.imageDress {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-size: 80%;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(253, 249, 249, 0.5);
+  transition: 0.5s ease;
+}
+.display {
+  display: none;
+  padding: 15px;
+}
+.button {
+  position: absolute;
+  display: initial;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 15px), -10px);
+  /* width: 150px; */
+}

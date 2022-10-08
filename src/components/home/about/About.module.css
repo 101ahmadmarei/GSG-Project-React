@@ -1,0 +1,24 @@
+.about {
+  padding: 30px 150px;
+  /* display: flex;
+  justify-content: center; */
+}
+.about .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    width: 80%;
+  }
+  .about .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about {
+    padding: 30px 40px;
+  }
+}

@@ -1,0 +1,51 @@
+.explore {
+  padding: 30px 150px;
+  position: relative;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 235px 235px 240px 235px;
+  grid-template-rows: 280px 280px;
+  column-gap: 30px;
+  grid-template-areas: "c1 c1 c2 c3" "c1 c1 c4 c5";
+}
+
+@media only screen and (max-width: 1200px) {
+  .explore {
+    padding: 10% 10%;
+    width: 80%;
+    /* margin-left: 50%; */
+  }
+  .grid {
+    grid-template-rows: 280px 280px 280px;
+    grid-template-columns: 235px 235px 235px;
+    /* row-gap: 30px; */
+    grid-template-areas: "c1 c1 c2" "c1 c1 c4" "c3 c5 .";
+  }
+}
+@media only screen and (max-width: 768px) {
+  .explore {
+    padding: 10% 10%;
+    width: 80%;
+    /* margin-left: 50%; */
+  }
+  .grid {
+    grid-template-rows: 280px 230px 280px 280px;
+    grid-template-columns: 235px 235px;
+    row-gap: 10px;
+    grid-template-areas: "c1 c1" "c1 c1" "c2 c4" "c3 c5";
+  }
+}
+@media only screen and (max-width: 500px) {
+  .explore {
+    padding: 30px 40px;
+    width: 80%;
+    /* margin-left: 50%; */
+  }
+  .grid {
+    grid-template-rows: 280px 280px 280px 280px 280px;
+    grid-template-columns: 100%;
+    /* row-gap: 30px; */
+    grid-template-areas: "c1" "c1" "c2" "c3" "c4" "c5";
+  }
+}

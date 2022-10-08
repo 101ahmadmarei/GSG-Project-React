@@ -1,0 +1,15 @@
+.video {
+  padding: 30px 150px;
+}
+.types {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  /* gap: 10px; */
+}
+
+@media only screen and (max-width: 767px) {
+  .video {
+    padding: 30px 40px;
+  }
+}

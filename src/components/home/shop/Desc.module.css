@@ -1,0 +1,15 @@
+.desc1 {
+  height: 50px;
+  width: 100%;
+  color: rgba(3, 3, 3, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  /* text-align: center; */
+  line-height: 30px;
+  background-color: white;
+  position: absolute;
+  top: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+.imageABOUT {
+  width: 48%;
+  height: 430px;
+}
+
+@media only screen and (max-width: 767px) {
+  .imageABOUT {
+    width: 100%;
+    height: calc(width * 1.3);
+  }
+}

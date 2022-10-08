@@ -1,0 +1,62 @@
+.text {
+  width: 47%;
+}
+.pre {
+  opacity: 1;
+  color: rgba(3, 3, 3, 1);
+  font-family: "ProximaNova-Light";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+  margin: 0 0 10px;
+}
+.text h3 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.text p {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+  margin: 0;
+  /* width: 60px; */
+}
+.text p span {
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  .text {
+    width: 100%;
+    margin-top: 25px;
+  }
+  .text p span {
+    display: initial;
+    padding: 5px;
+    border-right: solid 0.5px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .text p span {
+    display: initial;
+    padding: 5px;
+    border-right: solid 0.5px;
+  }
+}

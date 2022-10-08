@@ -1,0 +1,63 @@
+.subscribe {
+  width: 40%;
+}
+.subscribe h2 {
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+}
+.subscribe input {
+  opacity: 1;
+  color: rgba(222, 222, 222, 1);
+  font-family: "MuseoSansCyrl-500";
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 20px;
+  /* text-transform: uppercase; */
+  background-color: transparent;
+  border: solid 0.3px #6e6e6ea1;
+  width: 300px;
+  height: 40px;
+  color: rgba(222, 222, 222, 1);
+}
+
+::placeholder {
+  padding-left: 5px;
+}
+.subscribe button {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Semibold";
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  width: 166px;
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 500px) {
+  .subscribe {
+    width: 90%;
+  }
+  .subscribe input {
+    width: 110%;
+    margin-bottom: 30px;
+  }
+  .subscribe button {
+    margin-left: 0;
+  }
+}

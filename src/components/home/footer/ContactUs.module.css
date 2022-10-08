@@ -1,0 +1,33 @@
+.contactUs {
+  width: 147px;
+  margin-right: 20px;
+}
+.contactUs h2 {
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+}
+.contactUs p {
+  opacity: 1;
+  color: rgba(222, 222, 222, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+  height: 100px;
+  position: relative;
+}
+.contactUs p span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
