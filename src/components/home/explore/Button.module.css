@@ -3,3 +3,8 @@
   left: 50%;
   transform: translateX(-50%);
 }
+@media only screen and (max-width: 768px) {
+  .button {
+    bottom: -10px;
+  }
+}
