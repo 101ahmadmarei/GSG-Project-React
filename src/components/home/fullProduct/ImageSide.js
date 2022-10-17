@@ -9,8 +9,7 @@ import style from "./ImageSide.module.css";
 //   { id: 4, image: "/assets/images/F1.3.png" },
 // ];
 const ImageSide = ({ images }) => {
-  const [currentImage, setCurrentImage] = useState(images[1]);
-  console.log(images[1]);
+  const [currentImage, setCurrentImage] = useState(images[0]);
   return (
     <div className={style.imageSide}>
       <SmallImages
