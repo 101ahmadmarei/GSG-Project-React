@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  list-style: none;
+  padding: 0;
+}
+@media screen and (min-width: 850px) {
+  .container {
+    display: none;
+  }
+}
+.slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.slide span {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  /* background: rgba(141, 174, 224, 0.5); */
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .span2 {
+    display: none;
+  }
+}
