@@ -2,7 +2,7 @@ import React from "react";
 import style from "./SmallImages.module.css";
 const smallImages = ({ images, onChangeImage, activeImage }) => {
   const ChangeImageHandler = (event) => {
-    const index = event.target.id - 1;
+    const index = event.target.id;
     onChangeImage(images[index]);
   };
   return (
@@ -10,11 +10,11 @@ const smallImages = ({ images, onChangeImage, activeImage }) => {
       {images.map((img, index) => (
         <img
           key={index}
-          src={img.image}
-          id={img.id}
-          alt={`img ${img.id}`}
+          src={img}
+          id={index}
+          alt={`img`}
           className={`${style.smallImage} ${
-            activeImage - 1 == index ? style.active : ""
+            activeImage == img ? style.active : ""
           }`}
           onClick={ChangeImageHandler}
         />

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DescriptionContext from "../../../store/card-context";
 import ImageSide from "./ImageSide";
 import TotalInfo from "./TotalInfo";
@@ -176,14 +176,15 @@ const AllDetails = [
   },
 ];
 
-const FullProductDetails = () => {
+const FullProductDetails = ({ Info }) => {
   const cardCtx = useContext(DescriptionContext);
+  // console.log(Info[0].images);
   return (
     <Card className={style.fullProduct}>
       <Header />
       <article>
-        <ImageSide images={AllDetails[cardCtx.idCard - 1].images} />
-        <TotalInfo Info={AllDetails[cardCtx.idCard - 1].totalInfo} />
+        <ImageSide images={Info[cardCtx.idCard - 1].images} />
+        <TotalInfo Info={Info[cardCtx.idCard - 1].totalInfo} />
       </article>
       <button className={style.button}>View Full product Details</button>
     </Card>

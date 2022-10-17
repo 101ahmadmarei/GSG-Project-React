@@ -7,16 +7,12 @@ import Shop from "../components/home/shop/Shop";
 import Videos from "../components/home/videos/Videos";
 import AsSoon from "../components/home/asSeen/AsSoon";
 import Footer from "../components/home/footer/Footer";
-import FullProductDetails from "../components/home/fullProduct/FullProductDetails";
-import DescriptionContext from "../store/card-context";
 
-function Home() {
-  // const cardCtx = useContext(DescriptionContext);
+function Home({ Info }) {
   return (
     <div>
-      {/* {cardCtx.showCard && <FullProductDetails />} */}
       <HomeScreen />
-      <Featured />
+      <Featured Info={Info} />
       <About />
       <Explore />
       <Shop />

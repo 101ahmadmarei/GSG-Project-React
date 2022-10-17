@@ -5,7 +5,7 @@ import Title from "../../global/Title";
 import FullProductDetails from "../fullProduct/FullProductDetails";
 import DescriptionContext from "../../../store/card-context";
 
-const Featured = () => {
+const Featured = ({ Info }) => {
   const cardCtx = useContext(DescriptionContext);
 
   const Products = [
@@ -78,7 +78,7 @@ const Featured = () => {
           onClick={() => cardCtx.closeCard()}
         ></div>
       )}
-      {cardCtx.showCard && <FullProductDetails />}
+      {cardCtx.showCard && <FullProductDetails Info={Info} />}
       <Title Title="Feature" />
       <div className={style.products}>{myComponent}</div>
     </div>

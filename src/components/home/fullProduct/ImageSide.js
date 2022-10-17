@@ -10,15 +10,15 @@ import style from "./ImageSide.module.css";
 // ];
 const ImageSide = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(images[1]);
-
+  console.log(images[1]);
   return (
     <div className={style.imageSide}>
       <SmallImages
         images={images}
         onChangeImage={setCurrentImage}
-        activeImage={currentImage.id}
+        activeImage={currentImage}
       />
-      <MainImage activeImage={currentImage.image} />
+      <MainImage activeImage={currentImage} />
     </div>
   );
 };
