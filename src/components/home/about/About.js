@@ -1,7 +1,7 @@
 import React from "react";
 import ImageAbout from "./ImageAbout";
 import Text from "./Text";
-import Title from "../../cart/Title";
+import Title from "../../global/Title";
 import style from "./About.module.css";
 const About = () => {
   return (

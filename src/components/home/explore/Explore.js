@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
-import Title from "../../cart/Title";
+import Title from "../../global/Title";
 import style from "./Explore.module.css";
 import Info from "./Info";
 import Button from "./Button";
@@ -41,7 +41,7 @@ const Explore = () => {
       <Title Title="Explore" />
       <Box sx={{ width: 1 }}>
         <Box
-          container
+          // container
           // sx={{
           //   display: "grid",
           //   gridTemplateColumns: "repeat(4, 1fr)",

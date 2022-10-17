@@ -11,7 +11,12 @@ const Card = (props) => {
       onMouseEnter={() => setQuickView(true)}
       onMouseLeave={() => setQuickView(false)}
     >
-      <ImageDress img={props.img} status={quickView} isNew={props.isNew} />
+      <ImageDress
+        img={props.img}
+        status={quickView}
+        isNew={props.isNew}
+        id={props.id}
+      />
       <Description
         description={props.description}
         status={quickView}

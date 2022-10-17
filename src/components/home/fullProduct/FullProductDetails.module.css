@@ -1,0 +1,94 @@
+.fullProduct {
+  /* width: 82%;
+  /* margin-left: 9%; */
+  /* height: 800px; */
+  /* background-color: white;
+  padding: 25px;
+  margin: 50px 9%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  animation: slide-down 1000ms ease-out forwards; */
+  /* max-height: 600px; */
+  /* overflow: scroll; */
+}
+.fullProduct {
+  position: fixed;
+  top: 2vh;
+  bottom: 2vh;
+  left: 9%;
+  width: 82%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 500ms ease-out forwards;
+  /* max-height: 600px; */
+  height: 600px;
+}
+
+@media (min-width: 768px) {
+  .fullProduct {
+    /* width: 40rem; */
+    /* left: calc(50% - 20rem); */
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fullProduct article {
+  display: flex;
+  width: 100%;
+  /* height: 80%; */
+  justify-content: space-between;
+  max-height: 80%;
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 850px) {
+  .fullProduct {
+    /* position: absolute; */
+    height: 90%;
+    /* max-width: 800px; */
+    left: 0%;
+    margin-left: 5%;
+    width: 90%;
+    /* margin: 0; */
+  }
+  .fullProduct article {
+    /* max-height: 70%; */
+
+    /* max-height: 100%; */
+    /* overflow: none; */
+  }
+}
+.button {
+  width: 302px;
+  height: 40px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-family: "ProximaNova-Bold";
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color: RGB(51, 51, 58);
+  border: none;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  transform: translateX(-50%);
+}

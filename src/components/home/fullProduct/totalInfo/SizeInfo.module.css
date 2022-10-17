@@ -1,0 +1,68 @@
+.sizeInfo {
+  margin-top: 20px;
+}
+
+.sizeInfo h2 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-bottom: -15px;
+}
+.sizeInfo div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sizeInfo ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.sizeInfo ul li {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .sizeInfo ul li span {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+} */
+.sizeInfo .p1 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Semibold";
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+.sizeInfo .p2 {
+  opacity: 1;
+  color: rgba(102, 102, 102, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+  margin-top: -15px;
+}

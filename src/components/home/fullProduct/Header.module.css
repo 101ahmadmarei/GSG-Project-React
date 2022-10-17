@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 40px;
+}
+.title {
+  opacity: 1;
+  color: rgba(3, 3, 3, 1);
+  font-family: "ProximaNova-Light";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 40px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../../cart/Title";
+import Title from "../../global/Title";
 import style from "./AsSoon.module.css";
 const AsSoon = () => {
   return (

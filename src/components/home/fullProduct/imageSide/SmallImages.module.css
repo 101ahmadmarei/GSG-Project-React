@@ -1,0 +1,14 @@
+.smallImages {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+.smallImage {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.active {
+  border: solid 1px orangered;
+}

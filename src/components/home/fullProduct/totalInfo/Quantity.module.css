@@ -1,0 +1,75 @@
+.quantity div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.quantity ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  border: 1px solid rgba(222, 222, 222, 1);
+  width: 125px;
+}
+.quantity ul li {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  background-color: RGB(243, 243, 243);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.quantity ul li.quantityNumber {
+  background-color: white;
+  cursor: initial;
+}
+.quantity ul li.quantityNumber span {
+  color: rgba(81, 83, 86, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 14px;
+}
+
+button.addToCart {
+  width: 180px;
+  height: 40px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-family: "ProximaNova-Bold";
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color: RGB(51, 51, 58);
+  border: none;
+}
+.addToWishlist {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Semibold";
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  width: 160px;
+  height: 40px;
+  border: none;
+  border-bottom: solid;
+  background-color: none;
+}
+
+@media screen and (max-width: 650px) {
+  .quantity div {
+  }
+}

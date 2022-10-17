@@ -1,0 +1,10 @@
+.imageSide {
+  width: 50%;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .imageSide {
+    width: 100%;
+  }
+}

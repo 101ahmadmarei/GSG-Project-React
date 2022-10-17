@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../../cart/Title";
+import Title from "../../global/Title";
 import Video from "./Video";
 import Button from "./Button";
 

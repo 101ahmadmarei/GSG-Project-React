@@ -1,0 +1,9 @@
+.totalInfo {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .totalInfo {
+    width: 100%;
+  }
+}

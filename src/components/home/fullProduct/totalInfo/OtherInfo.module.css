@@ -1,0 +1,32 @@
+.otherInfo {
+}
+
+.otherInfo div {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 0.2px solid whitesmoke;
+}
+.otherInfo div h3 {
+  width: 50%;
+  opacity: 1;
+  color: rgba(0, 0, 0, 1);
+  font-family: "ProximaNova-Light";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+}
+.otherInfo div p {
+  opacity: 1;
+  color: rgba(102, 102, 102, 1);
+  font-family: "ProximaNova-Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: justified;
+  line-height: 20px;
+}
