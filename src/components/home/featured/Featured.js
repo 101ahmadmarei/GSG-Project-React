@@ -4,7 +4,7 @@ import Card from "./Card";
 import Title from "../../global/Title";
 import FullProductDetails from "../fullProduct/FullProductDetails";
 import DescriptionContext from "../../../store/card-context";
-
+import ImageGallery from "react-image-gallery";
 const Featured = ({ Info }) => {
   const cardCtx = useContext(DescriptionContext);
 
@@ -72,6 +72,9 @@ const Featured = ({ Info }) => {
 
   return (
     <div className={style.feature}>
+      <ImageGallery images={myComponent} />
+      {/* <div className={style.arrowLeft}></div>
+      <div className={style.arrowRight}></div>
       {cardCtx.showCard && (
         <div
           className={style.overlay}
@@ -80,7 +83,7 @@ const Featured = ({ Info }) => {
       )}
       {cardCtx.showCard && <FullProductDetails Info={Info} />}
       <Title Title="Feature" />
-      <div className={style.products}>{myComponent}</div>
+      <div className={style.products}>{myComponent}</div> */}
     </div>
   );
 };

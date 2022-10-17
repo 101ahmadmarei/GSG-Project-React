@@ -17,8 +17,8 @@
   position: fixed;
   top: 2vh;
   bottom: 2vh;
-  left: 9%;
-  width: 82%;
+  left: 7%;
+  width: 86%;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
@@ -26,7 +26,7 @@
   z-index: 30;
   animation: slide-down 500ms ease-out forwards;
   /* max-height: 600px; */
-  height: 600px;
+  height: 90%;
 }
 
 @media (min-width: 768px) {
@@ -51,27 +51,22 @@
   width: 100%;
   /* height: 80%; */
   justify-content: space-between;
-  max-height: 80%;
+  height: 80%;
   overflow: scroll;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
   .fullProduct {
-    /* position: absolute; */
     height: 90%;
-    /* max-width: 800px; */
+    width: 95%;
     left: 0%;
-    margin-left: 5%;
-    width: 90%;
-    /* margin: 0; */
-  }
-  .fullProduct article {
-    /* max-height: 70%; */
+    margin: 0 20px;
+    /* max-width: 800px; */
 
-    /* max-height: 100%; */
-    /* overflow: none; */
-  }
-}
+/* margin: 0; */
+/* } */
+
+/* } */
 .button {
   width: 302px;
   height: 40px;
@@ -89,6 +84,6 @@
   border: none;
   position: absolute;
   left: 50%;
-  margin-top: 25px;
-  transform: translateX(-50%);
+  /* margin-top: 25px; */
+  transform: translate(-50%, 50%);
 }

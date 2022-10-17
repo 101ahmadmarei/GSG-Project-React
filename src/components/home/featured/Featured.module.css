@@ -18,14 +18,25 @@
 .products {
   display: grid;
   /* grid-template-columns: auto auto auto auto; */
-  grid-template-columns: repeat(auto-fill, 250px);
-  /* gap: 20px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
-  /* column-gap: 20px; */
+  /* column-gap: 5px; */
+  /* padding: 10px; */
 }
 @media only screen and (max-width: 992px) {
   .feature {
     padding: 30px 40px;
+  }
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .feature {
+    height: 500px;
+  }
+  .products {
+    grid-template-columns: 1fr 1fr;
   }
 }
 .overlay {
@@ -40,4 +51,57 @@
   background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
   z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
+}
+
+.arrowLeft {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(1, 1, 1, 0.4);
+  transform: translateY(-50%);
+  left: -40px;
+  z-index: 1;
+}
+.arrowRight {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(1, 1, 1, 0.4);
+  transform: translateY(-50%);
+  right: -40px;
+  z-index: 1;
+}
+
+.arrowLeft::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* border: solid; */
+  right: 5px;
+  border-left: solid 0.5px;
+  border-bottom: solid 0.5px;
+  border-color: white;
+  transform: rotate(45deg);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.arrowRight::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* border: solid; */
+  left: 5px;
+  border-left: solid 0.5px;
+  border-bottom: solid 0.5px;
+  border-color: white;
+  transform: rotate(45deg);
+  top: 50%;
+  transform: translateY(-50%) rotate(225deg);
 }
