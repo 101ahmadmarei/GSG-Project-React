@@ -5,7 +5,7 @@
   list-style: none;
   padding: 0;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 992px) {
   .container {
     display: none;
   }
@@ -31,6 +31,11 @@
 
 @media screen and (max-width: 650px) {
   .span2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) {
+  .span3 {
     display: none;
   }
 }

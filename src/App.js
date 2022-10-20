@@ -1,8 +1,10 @@
 import "./App.css";
-import { Fragment, useState, useEffect, useCallback } from "react";
+import { Fragment, useEffect } from "react";
 import Home from "./pages/Home";
+import { useDispatch } from "react-redux";
+import { detailsCardActions } from "./store/details-card-slice";
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   const fetchProductsHandler = async () => {
     const response = await fetch("https://dummyjson.com/products");
     const data = await response.json();
@@ -23,14 +25,14 @@ const App = () => {
         },
       };
     });
-    setProducts(loadedProducts);
+    dispatch(detailsCardActions.productDetails(loadedProducts));
   };
   useEffect(() => {
     fetchProductsHandler();
   }, []);
   return (
     <Fragment>
-      <Home Info={products} />
+      <Home />
     </Fragment>
   );
 };

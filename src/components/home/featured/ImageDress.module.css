@@ -4,16 +4,7 @@
   height: 390px;
   /* padding: 10px; */
 }
-/* .comHover {
-  width: 230px;
-  margin-bottom: 10px;
-} */
 
-/* .imageDress.imgHover {
-  padding: 10px;
-
- 
-} */
 .new.component::after {
   content: "NEW";
   position: absolute;
@@ -27,9 +18,6 @@
   line-height: 20px;
   margin: 10px;
   color: white;
-}
-.comHover.component:after {
-  /* margin: 20px; */
 }
 
 .imageDress {
@@ -56,7 +44,5 @@
   display: initial;
   top: 50%;
   left: 50%;
-  /* transform: translate(calc(-50% + 15px), -10px); */
   transform: translate(-50%, -10px);
-  /* width: 150px; */
 }

@@ -23,19 +23,15 @@
   /* column-gap: 5px; */
   /* padding: 10px; */
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .feature {
     padding: 30px 40px;
   }
   .products {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media only screen and (max-width: 851px) {
-  .products {
     display: none;
   }
 }
+
 .overlay {
   position: fixed; /* Sit on top of the page content */
   /* display: none; Hidden by default */

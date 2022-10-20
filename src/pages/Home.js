@@ -8,11 +8,11 @@ import Videos from "../components/home/videos/Videos";
 import AsSoon from "../components/home/asSeen/AsSoon";
 import Footer from "../components/home/footer/Footer";
 
-function Home({ Info }) {
+function Home() {
   return (
     <div>
       <HomeScreen />
-      <Featured Info={Info} />
+      <Featured />
       <About />
       <Explore />
       <Shop />

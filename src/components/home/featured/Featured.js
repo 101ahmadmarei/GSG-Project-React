@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import style from "./Featured.module.css";
 import Card from "./Card";
 import Title from "../../global/Title";
 import FullProductDetails from "../fullProduct/FullProductDetails";
-import DescriptionContext from "../../../store/card-context";
 import Slider from "./Slider";
-const Featured = ({ Info }) => {
-  const cardCtx = useContext(DescriptionContext);
-
+import { useSelector, useDispatch } from "react-redux";
+import { detailsCardActions } from "../../../store/details-card-slice";
+const Featured = () => {
+  const dispatch = useDispatch();
+  const showCard = useSelector((state) => state.cardDetails.showCard);
   const Products = [
     {
       id: 1,
@@ -72,15 +73,13 @@ const Featured = ({ Info }) => {
 
   return (
     <div className={style.feature}>
-      {/* <div className={style.arrowLeft}></div>
-      <div className={style.arrowRight}></div> */}
-      {cardCtx.showCard && (
+      {showCard && (
         <div
           className={style.overlay}
-          onClick={() => cardCtx.closeCard()}
+          onClick={() => dispatch(detailsCardActions.closeCard())}
         ></div>
       )}
-      {cardCtx.showCard && <FullProductDetails Info={Info} />}
+      {showCard && <FullProductDetails />}
       <Title Title="Feature" />
       <div className={style.products}>{myComponent}</div>
       <Slider com={myComponent} />

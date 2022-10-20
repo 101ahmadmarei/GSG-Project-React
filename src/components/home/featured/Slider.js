@@ -14,6 +14,7 @@ export default function Slider({ com }) {
               <div>
                 <span className={styles.span1}>{com[++ind % com.length]}</span>
                 <span className={styles.span2}>{com[++ind % com.length]}</span>
+                <span className={styles.span3}>{com[++ind % com.length]}</span>
               </div>
             </div>
           );
