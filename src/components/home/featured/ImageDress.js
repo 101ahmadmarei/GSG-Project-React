@@ -10,7 +10,7 @@ const ImageDress = ({ img, status, isNew, id }) => {
     <div className={style.component}>
       <img className={style.imageDress} src={img} alt="img" />
       <div className={status ? style.overlay : ""}></div>
-      <img
+      <button
         id={id}
         className={buttonClasses}
         src="/assets/images/Button/Primary/M.png"
@@ -18,7 +18,9 @@ const ImageDress = ({ img, status, isNew, id }) => {
         onClick={(event) =>
           dispatch(detailsCardActions.openCard(event.target.id))
         }
-      />
+      >
+        Quick View
+      </button>
     </div>
   );
 };

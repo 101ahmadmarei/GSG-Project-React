@@ -6,11 +6,14 @@ const Image = ({ item, status }) => {
     <div className={style.image}>
       <img src={item} alt="" className={style.ahmad} />
       <div className={status ? style.overlay : ""}></div>
-      <img
+      <button
         className={buttonClasses}
         src="/assets/images/Button/Primary/M.png"
         alt="img"
-      />{" "}
+      >
+        {" "}
+        Quick View
+      </button>
     </div>
   );
 };

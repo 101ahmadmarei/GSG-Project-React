@@ -1,13 +1,9 @@
 .button {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 130px;
-  height: 40px;
+  width: auto;
+  height: 50px;
   opacity: 1;
   color: rgba(255, 255, 255, 1);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  font-family: "ProximaNova-Bold";
   font-size: 12px;
   font-weight: 700;
   font-style: normal;
@@ -17,5 +13,10 @@
   text-transform: uppercase;
   background-color: RGB(51, 51, 58);
   border: none;
+  position: absolute;
+  left: 50%;
+  /* margin-top: 25px; */
+  transform: translate(-50%, 50%);
+  padding: 10px 20px;
   cursor: pointer;
 }
