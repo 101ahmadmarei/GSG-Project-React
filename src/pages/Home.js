@@ -10,10 +10,12 @@ import Footer from "../components/home/footer/Footer";
 import FullProductDetails from "../components/home/fullProduct/FullProductDetails";
 import { useSelector } from "react-redux";
 import Overlay from "../UI/Overlay";
+import ScrollToTop from "react-scroll-to-top";
 function Home() {
   const showCard = useSelector((state) => state.cardDetails.showCard);
   return (
     <div>
+      <ScrollToTop smooth />
       <Overlay />
       {showCard && <FullProductDetails />}
       <HomeScreen />

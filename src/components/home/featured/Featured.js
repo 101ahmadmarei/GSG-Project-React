@@ -1,30 +1,50 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import style from "./Featured.module.css";
 import Card from "./Card";
 import Title from "../../global/Title";
 import Slider from "./Slider";
 import { useSelector } from "react-redux";
-
+import Button from "../../global/Button";
 const Featured = () => {
   let Products = useSelector((state) => state.cardDetails.productDetails);
-  Products = Products.map((item) => {
-    return {
-      id: item.id,
-      img: item.id != 4 ? item.images[0] : item.images[1],
-      description: item.totalInfo.title,
-      price: item.totalInfo.price,
-      isNew: true,
-    };
-  });
-  const myComponent = Products.map((item, index) => (
-    <Card key={index} {...item} />
-  ));
+  const [showMore, setShowMore] = useState(false);
+  const [components, setComponents] = useState([]);
+  const featureSection = useRef(null);
 
+  useEffect(() => {
+    const MyProducts = Products.map((item) => {
+      return {
+        id: item.id,
+        img: item.id != 4 ? item.images[0] : item.images[1],
+        description: item.totalInfo.title,
+        price: item.totalInfo.price,
+        isNew: true,
+      };
+    });
+    setComponents(
+      MyProducts.map((item, index) => <Card key={index} {...item} />)
+    );
+  }, [Products]);
+
+  const changeShowMoreHandler = () => {
+    setShowMore((prevState) => !prevState);
+    if (showMore) {
+      featureSection.current.scrollIntoView({ behavior: "smooth" });
+      console.log(featureSection.current.offsetTop);
+    }
+  };
   return (
-    <div className={style.feature}>
+    <div className={style.feature} id="feature" ref={featureSection}>
       <Title Title="Featured" />
-      <div className={style.products}>{myComponent}</div>
-      <Slider com={myComponent} />
+      <div className={style.products}>
+        {showMore ? components : components.slice(0, 8)}
+      </div>
+      <Slider com={components} />
+      <div className={style.showMoreTo}>
+        <Button makeAction={changeShowMoreHandler} className={"showMore"}>
+          {!showMore ? "Show More..." : "Show Less..."}
+        </Button>
+      </div>
     </div>
   );
 };
