@@ -21,9 +21,9 @@ const App = () => {
             price: item.price,
             rating: item.rating,
             otherInfo: {
-              employment: "54 jobs",
-              partnership: "Randall Armstrong",
-              collab: "Augusta Mendoza",
+              stock: item.stock,
+              brand: item.brand,
+              category: item.category,
             },
           },
         };

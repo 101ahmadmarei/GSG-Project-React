@@ -1,19 +1,19 @@
 import React from "react";
 import style from "./OtherInfo.module.css";
-const OtherInfo = ({ employment, partnership, collab }) => {
+const OtherInfo = ({ stock, brand, category }) => {
   return (
     <div className={style.otherInfo}>
       <div>
-        <h3>Artisan Employment</h3>
-        <p>{employment}</p>
+        <h3>Stock</h3>
+        <p>{stock}</p>
       </div>
       <div>
-        <h3>Partnership</h3>
-        <p>{partnership}</p>
+        <h3>Brand</h3>
+        <p>{brand}</p>
       </div>
       <div>
-        <h3>In collab</h3>
-        <p>{collab}</p>
+        <h3>Category</h3>
+        <p>{category}</p>
       </div>
     </div>
   );
