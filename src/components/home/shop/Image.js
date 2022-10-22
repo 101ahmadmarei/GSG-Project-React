@@ -1,19 +1,13 @@
 import React from "react";
+import Button from "../../global/Button";
 import style from "./Image.module.css";
 const Image = ({ item, status }) => {
-  const buttonClasses = status ? style.button : style.display;
+  const buttonClasses = status ? "shop" : "displayShop";
   return (
     <div className={style.image}>
       <img src={item} alt="" className={style.ahmad} />
       <div className={status ? style.overlay : ""}></div>
-      <button
-        className={buttonClasses}
-        src="/assets/images/Button/Primary/M.png"
-        alt="img"
-      >
-        {" "}
-        Quick View
-      </button>
+      <Button className={buttonClasses}> Quick View</Button>
     </div>
   );
 };

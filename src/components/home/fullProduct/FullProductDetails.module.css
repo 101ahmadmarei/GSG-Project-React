@@ -55,35 +55,3 @@
   overflow: scroll;
   flex-wrap: wrap;
 }
-/* @media screen and (max-width: 850px) {
-  .fullProduct {
-    height: 90%;
-    width: 95%;
-    left: 0%;
-    margin: 0 20px;
-    /* max-width: 800px; */
-
-/* margin: 0; */
-/* } */
-
-/* } */
-.button {
-  width: 302px;
-  height: 40px;
-  opacity: 1;
-  color: rgba(255, 255, 255, 1);
-  font-family: "ProximaNova-Bold";
-  font-size: 12px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 2px;
-  text-align: center;
-  line-height: 20px;
-  text-transform: uppercase;
-  background-color: RGB(51, 51, 58);
-  border: none;
-  position: absolute;
-  left: 50%;
-  /* margin-top: 25px; */
-  transform: translate(-50%, 50%);
-}

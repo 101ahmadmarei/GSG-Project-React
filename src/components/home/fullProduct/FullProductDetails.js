@@ -6,6 +6,7 @@ import Header from "./Header";
 import Card from "@mui/material/Card";
 import style from "./FullProductDetails.module.css";
 import { useSelector } from "react-redux";
+import Button from "../../global/Button";
 const FullProductDetails = () => {
   const Info = useSelector((state) => state.cardDetails.productDetails);
   const idCard = useSelector((state) => state.cardDetails.idCard);
@@ -17,7 +18,7 @@ const FullProductDetails = () => {
         <ImageSide images={Info[idCard - 1].images} />
         <TotalInfo Info={Info[idCard - 1].totalInfo} />
       </article>
-      <button className={style.button}>View Full product Details</button>
+      <Button className="fullProductButt">View Full product Details</Button>
     </Card>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Subscribe.module.css";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import Button from "../../global/Button";
 const Subscribe = () => {
   return (
     <div className={style.subscribe}>
@@ -9,7 +10,7 @@ const Subscribe = () => {
       <div>
         {" "}
         <input type="email" placeholder="ENTER YOUR EMAIL" />
-        <button>SUBSCRIBE</button>
+        <Button className="subscribe">SUBSCRIBE</Button>
       </div>
       <div style={{ marginTop: "10px" }}>
         <FacebookOutlinedIcon sx={{ color: "white", paddingRight: "5px" }} />

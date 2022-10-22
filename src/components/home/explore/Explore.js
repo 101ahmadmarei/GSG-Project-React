@@ -4,7 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Title from "../../global/Title";
 import style from "./Explore.module.css";
 import Info from "./Info";
-import Button from "./Button";
+import Button from "../../global/Button";
 const Explore = () => {
   const info = [
     {
@@ -40,24 +40,13 @@ const Explore = () => {
     <div className={style.explore}>
       <Title Title="Explore" />
       <Box sx={{ width: 1 }}>
-        <Box
-          // container
-          // sx={{
-          //   display: "grid",
-          //   gridTemplateColumns: "repeat(4, 1fr)",
-          //   columnGap: 3,
-          //   gridTemplateRows: "auto",
-          //   gridTemplateAreas: `"c1 c1 c2 c3" "c1 c1 c4 c5"`,
-          // }}
-          className={style.grid}
-          // xs={1}
-        >
+        <Box className={style.grid}>
           {info.map((inf, i) => (
             <Info index={i} key={i} news={inf} />
           ))}
         </Box>
       </Box>
-      <Button />
+      <Button className="explore">See the journal</Button>
     </div>
   );
 };

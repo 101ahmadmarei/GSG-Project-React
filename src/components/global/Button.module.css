@@ -3,7 +3,6 @@
   height: 50px;
   opacity: 1;
   color: rgba(255, 255, 255, 1);
-  font-family: "ProximaNova-Bold";
   font-size: 12px;
   font-weight: 700;
   font-style: normal;
@@ -13,10 +12,61 @@
   text-transform: uppercase;
   background-color: RGB(51, 51, 58);
   border: none;
-  position: absolute;
-  left: 50%;
-  /* margin-top: 25px; */
-  transform: translate(-50%, 50%);
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.featured,
+.shop {
+  width: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  padding: 0;
+  display: initial;
+}
+.displayFeatured,
+.displayShop {
+  display: none;
+}
+
+.explore {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .explore {
+    bottom: -20px;
+  }
+}
+.video {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 40px;
+}
+.subscribe {
+  width: 166px;
+  height: 40px;
+  margin: 0;
+  margin-top: 20px;
+  background-color: white;
+  color: rgba(51, 51, 58, 1);
+}
+@media only screen and (max-width: 500px) {
+  .subscribe {
+    margin: 0;
+  }
+}
+
+.fullProductButt {
+  width: 302px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }

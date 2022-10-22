@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../../global/Title";
 import Video from "./Video";
-import Button from "./Button";
+import Button from "../../global/Button";
 
 import style from "./Videos.module.css";
 const Videos = () => {
@@ -19,7 +19,7 @@ const Videos = () => {
           <Video key={i} desc={product.desc} item={product.img} />
         ))}
       </div>
-      <Button />
+      <Button className="video">Show More</Button>
     </div>
   );
 };

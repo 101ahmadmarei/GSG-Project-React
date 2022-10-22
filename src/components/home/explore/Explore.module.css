@@ -27,7 +27,6 @@
   .explore {
     padding: 10% 10%;
     width: 80%;
-    /* margin-left: 50%; */
   }
   .grid {
     grid-template-rows: 280px 230px 280px 280px;
@@ -46,6 +45,7 @@
     grid-template-rows: 280px 280px 280px 280px 280px;
     grid-template-columns: 100%;
     /* row-gap: 30px; */
+
     grid-template-areas: "c1" "c1" "c2" "c3" "c4" "c5";
   }
 }
