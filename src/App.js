@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     const transformData = (data) => {
-      console.log(data);
+      
       const loadedProducts = data.products.map((item) => {
         return {
           id: item.id,
