@@ -30,7 +30,7 @@ const Featured = () => {
     setShowMore((prevState) => !prevState);
     if (showMore) {
       featureSection.current.scrollIntoView({ behavior: "smooth" });
-      console.log(featureSection.current.offsetTop);
+      
     }
   };
   return (
