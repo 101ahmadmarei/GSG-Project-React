@@ -29,14 +29,3 @@
   /* background: rgba(141, 174, 224, 0.5); */
   text-align: center;
 }
-
-@media screen and (max-width: 650px) {
-  .span2 {
-    display: none;
-  }
-}
-@media screen and (max-width: 850px) {
-  .span3 {
-    display: none;
-  }
-}

@@ -14,6 +14,7 @@
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  transition: all 0.4s;
 }
 
 .featured,
@@ -70,4 +71,10 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
+}
+
+.button:hover {
+  background-color: rgb(78, 78, 78);
+  /* color: rgb(156, 156, 156); */
+  border: 1px solid rgb(65, 65, 65);
 }

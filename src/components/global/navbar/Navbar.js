@@ -1,19 +1,20 @@
 import React from "react";
 import Icon from "./Icon";
 import style from "./Navbar.module.css";
-import SearchIcon from "@mui/icons-material/Search";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-const Navbar = () => {
+
+const Navbar = ({ mainIcons }) => {
   let arrowUp = <KeyboardArrowUpIcon />;
+
   let arrowDown = (
     <KeyboardArrowDownIcon
       style={{ position: "absolute", top: "37%" }}
       fontSize="small"
     />
   );
+
   const myElement = {
     title: "matter",
     list: [
@@ -22,24 +23,7 @@ const Navbar = () => {
       <span>JOURNAL {arrowDown}</span>,
       <span>ABOUT {arrowDown}</span>,
     ],
-    icons: [
-      "Login",
-      <SearchIcon
-        fontSize="small"
-        sx={{ color: "#33333A" }}
-        style={{ position: "absolute", top: "25%" }}
-      />,
-      <FavoriteBorderIcon
-        fontSize="small"
-        sx={{ color: "#33333A" }}
-        style={{ position: "absolute", top: "25%" }}
-      />,
-      <ShoppingBagOutlinedIcon
-        fontSize="small"
-        sx={{ color: "#33333A" }}
-        style={{ position: "absolute", top: "25%" }}
-      />,
-    ],
+    icons: ["Login", ...mainIcons],
   };
   const Menus = (
     <ul className={style.menus}>

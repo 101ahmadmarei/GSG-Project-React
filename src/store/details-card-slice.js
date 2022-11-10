@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialDetailsCardState = createSlice({
   name: "detailsCard",
-  initialState: { showCard: false, idCard: null, productDetails: [] },
+  initialState: {
+    showCard: false,
+    idCard: null,
+    productDetails: [],
+    apparels: [],
+  },
   reducers: {
     openCard(state, action) {
       state.showCard = true;
@@ -13,6 +18,9 @@ const initialDetailsCardState = createSlice({
     },
     productDetails(state, action) {
       state.productDetails = action.payload;
+    },
+    apparels(state, action) {
+      state.apparels = action.payload;
     },
   },
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Button.module.css";
+
 const Button = (props) => {
   const { className = "", makeAction = () => {}, id = 0, children } = props;
 

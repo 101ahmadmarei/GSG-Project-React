@@ -1,0 +1,7 @@
+.header {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  /* z-index: 5; */
+  overflow-x: hidden;
+}

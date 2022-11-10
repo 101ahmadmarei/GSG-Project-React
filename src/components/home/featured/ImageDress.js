@@ -3,7 +3,7 @@ import style from "./ImageDress.module.css";
 import { useDispatch } from "react-redux";
 import { detailsCardActions } from "../../../store/details-card-slice";
 import Button from "../../global/Button";
-const ImageDress = ({ img, status, isNew, id }) => {
+const ImageDress = ({ img, status = "featured", isNew = true, id }) => {
   const dispatch = useDispatch();
 
   const buttonClasses = status ? "featured" : "displayFeatured";

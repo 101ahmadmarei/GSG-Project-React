@@ -1,12 +1,8 @@
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
 import Avatar from "@mui/material/Avatar";
 import style from "./NavMobile.module.css";
 
-const NavMobile = () => {
+const NavMobile = ({ mainIcons }) => {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -28,10 +24,9 @@ const NavMobile = () => {
     <div className={style.navMobile}>
       <Avatar {...stringAvatar("Ahmad Marei")} />
       <div className={style.icons}>
-        <SearchIcon fontSize="small" sx={{ color: "#33333A" }} />
-        <FavoriteBorderIcon fontSize="small" sx={{ color: "#33333A" }} />
-        <ShoppingBagOutlinedIcon fontSize="small" sx={{ color: "#33333A" }} />
-        <MenuIcon fontSize="small" sx={{ color: "#33333A" }} />
+        {mainIcons.map((icon, i) => (
+          <div key={i}>{icon}</div>
+        ))}
       </div>
     </div>
   );

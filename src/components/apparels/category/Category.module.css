@@ -1,0 +1,11 @@
+.category {
+  padding: 0 100px;
+}
+.category article {
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .category {
+    padding: 0 20px;
+  }
+}

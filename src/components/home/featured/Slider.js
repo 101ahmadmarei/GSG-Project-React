@@ -2,8 +2,10 @@ import { Slide } from "react-slideshow-image";
 
 import "react-slideshow-image/dist/styles.css";
 import styles from "./Slider.module.css";
+import useWindowDimensions from "../../../hooks/use-window-dimensions";
 
 export default function Slider({ com }) {
+  const { width } = useWindowDimensions();
   let ind = -1;
   return (
     <div className={styles.container}>
@@ -12,9 +14,9 @@ export default function Slider({ com }) {
           return (
             <div className={styles.slide} key={slide}>
               <div>
-                <span className={styles.span1}>{com[++ind % com.length]}</span>
-                <span className={styles.span2}>{com[++ind % com.length]}</span>
-                <span className={styles.span3}>{com[++ind % com.length]}</span>
+                <span>{com[++ind % com.length]}</span>
+                {width > 650 && <span>{com[++ind % com.length]}</span>}
+                {width > 850 && <span>{com[++ind % com.length]}</span>}
               </div>
             </div>
           );

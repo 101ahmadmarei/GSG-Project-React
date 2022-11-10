@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./Body.module.css";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const Body = () => {
   return (

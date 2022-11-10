@@ -6,7 +6,6 @@ import Explore from "../components/home/explore/Explore";
 import Shop from "../components/home/shop/Shop";
 import Videos from "../components/home/videos/Videos";
 import AsSoon from "../components/home/asSeen/AsSoon";
-import Footer from "../components/home/footer/Footer";
 import FullProductDetails from "../components/home/fullProduct/FullProductDetails";
 import { useSelector } from "react-redux";
 import Overlay from "../UI/Overlay";
@@ -25,7 +24,6 @@ function Home() {
       <Shop />
       <Videos />
       <AsSoon />
-      <Footer />
     </div>
   );
 }
