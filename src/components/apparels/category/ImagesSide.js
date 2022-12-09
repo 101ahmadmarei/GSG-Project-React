@@ -14,6 +14,7 @@ const ImagesSide = ({ images }) => {
               : image.title
           }
           price={image.price}
+          id={image.id}
         />
       ))}
     </div>

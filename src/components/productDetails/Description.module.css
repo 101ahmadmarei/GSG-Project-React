@@ -1,0 +1,57 @@
+.description {
+  margin-bottom: 50px;
+}
+.description .first {
+  width: 100%;
+  height: 480px;
+}
+
+.description article {
+  padding: 0 150px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description p {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  /* font-family: "ProximaNova-Regular"; */
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: justified;
+  line-height: 25px;
+  /* padding-left: 25%; */
+  width: 74%;
+  text-align: center; /* width: 50%; */
+}
+
+.description article .images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.description article .images div {
+  width: 30%;
+}
+
+.description article .images div img {
+  width: 100%;
+  /* height: 360px; */
+}
+
+.footer {
+  width: 100%;
+  height: 270px;
+  background-color: RGB(252, 252, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer p {
+  width: 60%;
+}

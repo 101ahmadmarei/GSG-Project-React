@@ -28,7 +28,33 @@
   /* max-height: 600px; */
   height: 90%;
 }
-
+.fullProductButt {
+  width: auto;
+  height: 50px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color: RGB(51, 51, 58);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 302px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
 @media (min-width: 768px) {
   .fullProduct {
     /* width: 40rem; */

@@ -2,6 +2,7 @@ import React from "react";
 import style from "./ImageDress.module.css";
 import { useDispatch } from "react-redux";
 import { detailsCardActions } from "../../../store/details-card-slice";
+import { Link } from "react-router-dom";
 import Button from "../../global/Button";
 const ImageDress = ({ img, status = "featured", isNew = true, id }) => {
   const dispatch = useDispatch();

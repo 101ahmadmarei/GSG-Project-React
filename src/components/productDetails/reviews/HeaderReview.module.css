@@ -1,0 +1,21 @@
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.Button {
+  display: flex;
+}
+.review .Button span {
+  opacity: 1;
+  color: rgba(102, 102, 102, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+  margin-right: 10px;
+}

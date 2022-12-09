@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import style from "./Header.module.css";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -8,6 +7,7 @@ import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import Button from "@mui/material/Button";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import style from "./FormControlMUI.module.css";
 const FormControlMUI = (props) => {
   const [open, setOpen] = useState(false);
 
@@ -23,8 +23,7 @@ const FormControlMUI = (props) => {
     setOpen(true);
   };
   return (
-    <div>
-      {" "}
+    <div className={style["custom-select"]}>
       <Button sx={{ mt: 2, color: "black", fontSize: 16 }} onClick={handleOpen}>
         {props.ButtonText}
       </Button>

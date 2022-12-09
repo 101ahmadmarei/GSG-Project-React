@@ -1,0 +1,15 @@
+.asSeen {
+  padding: 0 150px;
+  margin-bottom: 50px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+.images img {
+  width: 30%;
+}

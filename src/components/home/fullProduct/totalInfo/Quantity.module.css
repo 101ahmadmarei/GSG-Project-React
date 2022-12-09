@@ -67,6 +67,7 @@ button.addToCart {
   border: none;
   border-bottom: solid;
   background-color: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 650px) {

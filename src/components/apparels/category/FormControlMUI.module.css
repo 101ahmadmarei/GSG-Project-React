@@ -1,0 +1,41 @@
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  padding: 10px;
+  border: none;
+  background: #edf2ff;
+  width: 139px;
+  font-size: 15px;
+  font-weight: bold;
+  /*hide original SELECT element:*/
+}
+.custom-select select:focus {
+  outline: none;
+}
+.custom-select option {
+  padding: 10px;
+  border: none;
+  background: #edf2ff;
+  width: 139px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  /*hide original SELECT element:*/
+}
+.reset {
+  font-size: 18px;
+  color: rgb(65, 3, 3);
+}
+/* .custom-select:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #000 transparent transparent transparent;
+} */

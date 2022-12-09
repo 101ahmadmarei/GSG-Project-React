@@ -18,12 +18,10 @@ const ModalOverlay = (props) => {
 
 const Modal = (props) => {
   const dispatch = useDispatch();
-  const closeCartHandler = () => {
-    dispatch(cartActions.closeCart());
-  };
+
   return (
     <Fragment>
-      <Backdrop onClose={closeCartHandler} />
+      <Backdrop onClose={props.onClose} />
       <ModalOverlay>{props.children}</ModalOverlay>
     </Fragment>
   );

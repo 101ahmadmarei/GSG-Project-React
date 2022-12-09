@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Badge from "@mui/material/Badge";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import { wishlistActions } from "../../store/wishlist-slice";
 import NavMobile from "./navbar/NavMobile";
 import MainNavbar from "./navbar/Navbar";
 import Head from "./navbar/Head";
@@ -23,8 +24,13 @@ function notificationsLabel(count) {
 const Navbar = () => {
   const dispatch = useDispatch();
   const quantity = useSelector((state) => state.cart.totalQuantity);
+  const wishlists = useSelector((state) => state.wishlist.totalQuantity);
   const showCartHandler = () => {
     dispatch(cartActions.openCart());
+  };
+
+  const showWishListHandler = () => {
+    dispatch(wishlistActions.openWishlist());
   };
   const mainIcon = [
     <SearchIcon
@@ -33,12 +39,27 @@ const Navbar = () => {
       sx={{ color: "#33333A" }}
       style={{ position: "relative", top: "15%" }}
     />,
-    <FavoriteBorderIcon
-      id="favorite"
-      fontSize="small"
-      sx={{ color: "#33333A" }}
-      style={{ position: "relative", top: "15%" }}
-    />,
+    <IconButton
+      aria-label={notificationsLabel(wishlists)}
+      onClick={showWishListHandler}
+      style={{ position: "relative", top: "0%" }}
+    >
+      <Badge
+        badgeContent={wishlists}
+        color="primary"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <FavoriteBorderIcon
+          id="favorite"
+          fontSize="small"
+          sx={{ color: "#33333A" }}
+          style={{ position: "relative", top: "15%" }}
+        />
+      </Badge>
+    </IconButton>,
     <IconButton
       aria-label={notificationsLabel(quantity)}
       onClick={showCartHandler}

@@ -1,0 +1,13 @@
+.head {
+  opacity: 1;
+  background-color: rgba(51, 51, 58, 1);
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}

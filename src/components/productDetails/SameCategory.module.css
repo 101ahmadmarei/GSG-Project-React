@@ -1,0 +1,20 @@
+.products {
+  /* width: 75%; */
+  display: flex;
+  /* grid-template-columns: auto auto auto auto; */
+  /* grid-template-columns: repeat(auto-fill, auto); */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1024px) {
+  .products {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.same {
+  padding: 0px 150px;
+}

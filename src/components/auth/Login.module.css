@@ -1,0 +1,38 @@
+.card {
+  padding: 40px;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.textField {
+  /* width: 100%; */
+  /* margin: 100px; */
+}
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 15px;
+}
+.login {
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  top: 25px;
+  margin-bottom: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}

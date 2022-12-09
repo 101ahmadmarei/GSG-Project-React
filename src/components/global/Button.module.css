@@ -15,6 +15,10 @@
   padding: 10px 20px;
   cursor: pointer;
   transition: all 0.4s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .featured,
@@ -76,5 +80,5 @@
 .button:hover {
   background-color: rgb(78, 78, 78);
   /* color: rgb(156, 156, 156); */
-  border: 1px solid rgb(65, 65, 65);
+  /* border: 1px solid rgb(65, 65, 65); */
 }
