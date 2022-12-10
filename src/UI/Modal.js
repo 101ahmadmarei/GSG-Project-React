@@ -1,7 +1,5 @@
 import { Fragment } from "react";
-import ReactDOM from "react-dom";
-import { useDispatch } from "react-redux";
-import { cartActions } from "../store/cart-slice";
+
 import classes from "./Modal.module.css";
 
 const Backdrop = (props) => {
@@ -17,8 +15,6 @@ const ModalOverlay = (props) => {
 };
 
 const Modal = (props) => {
-  const dispatch = useDispatch();
-
   return (
     <Fragment>
       <Backdrop onClose={props.onClose} />

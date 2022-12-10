@@ -45,6 +45,7 @@ function notificationsLabel(count) {
 }
 
 function ResponsiveAppBar() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -55,7 +56,6 @@ function ResponsiveAppBar() {
     setOpen(!open);
   };
 
-  const dispatch = useDispatch();
   const quantity = useSelector((state) => state.cart.totalQuantity);
   const wishlists = useSelector((state) => state.wishlist.totalQuantity);
   const showCartHandler = () => {
@@ -80,6 +80,8 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = (setting) => {
     console.log(setting);
     if (setting === "Logout") {
+      dispatch(cartActions.clearCart());
+      dispatch(wishlistActions.clearWishlist());
       authCtx.logout();
       navigate("/Home");
     }

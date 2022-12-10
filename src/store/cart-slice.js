@@ -15,9 +15,11 @@ const cartSlice = createSlice({
       state.items = action.payload.items;
     },
     openCart(state, action) {
+      document.body.style.overflow = "hidden";
       state.showCart = true;
     },
     closeCart(state, action) {
+      document.body.style.overflow = "unset";
       state.showCart = false;
     },
     addItem(state, action) {
@@ -51,6 +53,11 @@ const cartSlice = createSlice({
       }
       state.totalQuantity--;
       state.totalAmount = state.totalAmount - existingItem.price;
+    },
+    clearCart(state, action) {
+      state.items = [];
+      state.totalQuantity = 0;
+      state.totalAmount = 0;
     },
   },
 });

@@ -1,20 +1,34 @@
-import { useContext } from "react";
+import { useState, Fragment, useEffect, useCallback } from "react";
 
 import Modal from "../../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import Checkout from "./Checkout";
+import { useSnackbar } from "notistack";
 // import CartContext from "../../store/cart-context";
-
+import useHttp from "../../hooks/use-http";
+import LoadingSpinner from "../../UI/LoadingSpinner";
 const Cart = (props) => {
+  const { sendRequest, error, isLoading } = useHttp();
+
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
+  const [isCheckout, setIsCheckout] = useState(false);
   const items = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   // const cartCtx = useContext(CartContext);
 
   // const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-  // const hasItems = cartCtx.items.length > 0;
+  const hasItems = items.length > 0;
+
+  const checkOrderHandler = () => {
+    setIsCheckout(true);
+  };
+  const closeCartHandler = () => {
+    dispatch(cartActions.closeCart());
+  };
 
   const cartItemRemoveHandler = (id) => {
     dispatch(cartActions.removeItem(id));
@@ -30,8 +44,28 @@ const Cart = (props) => {
       })
     );
   };
-  const closeCartHandler = () => {
-    dispatch(cartActions.closeCart());
+
+  const submitOrderHandler = async (userData) => {
+    const printData = (data) => {
+      console.log(data);
+    };
+    sendRequest(
+      {
+        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/orders.json",
+        method: "POST",
+        body: {
+          user: userData,
+          orderedItems: { "Total Amount": totalAmount, items },
+        },
+        header: {
+          "Content-Type": "application/json",
+        },
+      },
+      printData
+    );
+    dispatch(cartActions.clearCart());
+    closeCartHandler();
+    enqueueSnackbar("Order placed successfully!", { variant: "success" });
   };
 
   const cartItems = (
@@ -48,20 +82,30 @@ const Cart = (props) => {
       ))}
     </ul>
   );
+  const modalActions = (
+    <div className={classes.actions}>
+      <button className={classes["button--alt"]} onClick={closeCartHandler}>
+        Close
+      </button>
+      {hasItems && (
+        <button className={classes.button} onClick={checkOrderHandler}>
+          Order
+        </button>
+      )}
+    </div>
+  );
 
   return (
-    <Modal onClose={closeCartHandler}>
+    <Modal>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>${totalAmount}</span>
       </div>
-      <div className={classes.actions}>
-        <button className={classes["button--alt"]} onClick={closeCartHandler}>
-          Close
-        </button>
-        {true && <button className={classes.button}>Order</button>}
-      </div>
+      {isCheckout && (
+        <Checkout onConfirm={submitOrderHandler} onCancel={closeCartHandler} />
+      )}
+      {!isCheckout && modalActions}
     </Modal>
   );
 };
