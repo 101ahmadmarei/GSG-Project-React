@@ -18,7 +18,9 @@ const ProductDetails = () => {
   useEffect(() => {
     const transformData = (data) => {
       if (!data) navigate("/not-found");
+      console.log(data);
       Data.current = data;
+      console.log(Data.current);
     };
     fetchProduct(
       {
@@ -26,7 +28,7 @@ const ProductDetails = () => {
       },
       transformData
     );
-  }, [fetchProduct, productId]);
+  }, [fetchProduct, productId, navigate]);
   console.log(Data.current);
   return (
     <div>
