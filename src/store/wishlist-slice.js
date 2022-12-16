@@ -10,16 +10,16 @@ const wishlistSlice = createSlice({
       state.showWishlist = false;
     },
     replaceWishlist(state, action) {
-      state.wishlists = action.payload.wishlists;
+      state.wishlists = [] || action.payload.wishlists;
       state.totalQuantity = action.payload.totalQuantity;
     },
 
     addItem(state, action) {
       const newItem = action.payload;
-      //   const existingItem = state.wishlists.find(
-      //     (item) => item.id === newItem.id
-      //   );
-      //   if (!existingItem) {
+      console.log(state.wishlists);
+      console.log(state.showWishlist);
+      console.log(state.totalQuantity);
+
       state.wishlists.push({
         id: newItem.id,
         name: newItem.name,

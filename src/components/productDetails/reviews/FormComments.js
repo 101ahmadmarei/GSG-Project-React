@@ -23,20 +23,30 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const FormComments = ({ open, setOpen }) => {
-  const handleClose = () => setOpen(false);
+const FormComments = ({ open, setOpen, onAddedComment }) => {
+  const handleClose = () => {
+    setOpen(false);
+    setFormIsValid(true);
+  };
   const [value, setValue] = useState(2);
   const [review, setReview] = useState("");
   const [name, setName] = useState("");
+  const [formIsValid, setFormIsValid] = useState(true);
   const params = useParams();
   const { productId } = params;
-  const { sendRequest, isLoading } = useHttp();
+  const { sendRequest, isLoading } = useHttp(false);
   const submitReview = (event) => {
+    event.preventDefault();
     let date = new Date();
     const month = date.toLocaleString("default", { month: "long" });
     const day = date.getDate();
     const year = date.getFullYear();
     date = `on ${month} ${day},${year}`;
+    if (name.trim().length === 0) {
+      setFormIsValid(false);
+      return;
+    }
+    setFormIsValid(true);
     const comment = { rating: value, review, name, date };
     sendRequest({
       url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/reviews/${productId}.json`,
@@ -53,8 +63,17 @@ const FormComments = ({ open, setOpen }) => {
       setValue(2);
       setName("");
       setOpen(false);
+      onAddedComment();
     }
   }, [isLoading]);
+
+  // if (isLoading) {
+  //   return (
+  //     <div className={classes.loading}>
+  //       <LoadingSpinner />
+  //     </div>
+  //   );
+  // }
   return (
     <Modal
       open={open}
@@ -62,13 +81,14 @@ const FormComments = ({ open, setOpen }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      {/* {isLoading && (
-        <div className={classes.loading}>
-          <LoadingSpinner />
-        </div>
-      )} */}
+      {/* <div></div> */}
 
       <Box sx={style}>
+        {isLoading && (
+          <div className={classes.loading}>
+            <LoadingSpinner />
+          </div>
+        )}
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           Rate this product and write a review to help others make a decision to
           buy it. Your review will be posted on the site after it is approved by
@@ -91,7 +111,8 @@ const FormComments = ({ open, setOpen }) => {
           sx={{ display: "block" }}
           fullWidth
           margin="dense"
-          required
+          error={!formIsValid}
+          helperText={!formIsValid && "Name is required"}
         />
 
         <TextField
@@ -108,12 +129,7 @@ const FormComments = ({ open, setOpen }) => {
           required
         />
 
-        <Button
-          variant="outlined"
-          sx={{ mt: 2, ml: 2 }}
-          onClick={() => setOpen(false)}
-        >
-          {" "}
+        <Button variant="outlined" sx={{ mt: 2, ml: 2 }} onClick={handleClose}>
           Cancel
         </Button>
         <Button

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import HelpCenterOutlinedIcon from "@mui/icons-material/HelpCenterOutlined";
@@ -15,9 +15,47 @@ const Quantity = () => {
   const authCtx = useContext(AuthContext);
   const dispatch = useDispatch();
   const idCard = useSelector((state) => state.cardDetails.idCard);
-  const isInWishlist = useSelector((state) => state.wishlist.wishlists).find(
+  const isInWishlist = useSelector((state) => state.wishlist.wishlists)?.find(
     (item) => item.id === idCard
   );
+  const cartItems = useSelector((state) => state.cart.items);
+  const wishlistItems = useSelector((state) => state.wishlist.wishlists);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  console.log(
+    "🚀 ~ file: Quantity.js:25 ~ Quantity ~ totalQuantity",
+    totalQuantity
+  );
+  const totalQuantityWishlists = useSelector(
+    (state) => state.wishlist.totalQuantity
+  );
+
+  useEffect(() => {
+    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/cart.json", {
+      method: "PUT",
+      body: JSON.stringify({ totalAmount, items: cartItems, totalQuantity }),
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Sending cart data failed!");
+      }
+    });
+  }, [totalQuantity, totalAmount, cartItems]);
+  useEffect(() => {
+    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/wishlist.json", {
+      method: "PUT",
+      body: JSON.stringify({
+        wishlists: wishlistItems,
+        totalQuantity: totalQuantityWishlists,
+      }),
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Sending cart data failed!");
+      }
+    });
+  }, [wishlistItems, totalQuantityWishlists]);
+
   console.log(isInWishlist);
   const productDetails = useSelector(
     (state) => state.cardDetails.productDetails
@@ -59,6 +97,7 @@ const Quantity = () => {
       });
       return;
     }
+    // console.log(productDetails);
     const currentItem = productDetails.find((item) => item.id === idCard);
     enqueueSnackbar(
       `The product has been ${

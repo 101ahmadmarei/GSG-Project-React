@@ -3,7 +3,7 @@ import style from "./HeaderReview.module.css";
 import Button from "../../global/Button";
 import Rating from "../../global/Rating";
 import FormComments from "./FormComments";
-const HeaderReview = () => {
+const HeaderReview = ({ onAddedComment }) => {
   const [open, setOpen] = useState(false);
 
   const openForm = () => {
@@ -16,7 +16,11 @@ const HeaderReview = () => {
       <div className={style.Button}>
         <span>Share your thoughts with other customers</span>
         <Button makeAction={openForm}>Write a review</Button>
-        <FormComments open={open} setOpen={setOpen} />
+        <FormComments
+          open={open}
+          setOpen={setOpen}
+          onAddedComment={onAddedComment}
+        />
       </div>
     </div>
   );
