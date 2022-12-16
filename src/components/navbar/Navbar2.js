@@ -80,8 +80,8 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = (setting) => {
     console.log(setting);
     if (setting === "Logout") {
-      dispatch(cartActions.clearCart());
-      dispatch(wishlistActions.clearWishlist());
+      // dispatch(cartActions.clearCart());
+      // dispatch(wishlistActions.clearWishlist());
       authCtx.logout();
       navigate("/Home");
     }
@@ -101,7 +101,7 @@ function ResponsiveAppBar() {
           xs: "0 20px",
         },
       }}
-      disableScrollLock={true}
+      // disableScrollLock={true}
     >
       <Container maxWidth="xl" sx={{ p: 0 }}>
         <Toolbar
@@ -164,6 +164,7 @@ function ResponsiveAppBar() {
                 <Link
                   to={(page.id == 0 || page.id == 1) && `/${page.page}`}
                   //   className={(l) => (l.isActive ? "active" : "")}
+                  key={page.id}
                 >
                   <Tooltip
                     title={
@@ -216,6 +217,7 @@ function ResponsiveAppBar() {
               <NavLink
                 to={(page.id == 0 || page.id == 1) && `/${page.page}`}
                 className={(l) => (l.isActive ? "active" : "")}
+                key={page.id}
               >
                 <Tooltip
                   title={

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Modal from "../../UI/Modal";
 import WishlistItem from "./WishlistItem";
@@ -9,6 +9,19 @@ import { wishlistActions } from "../../store/wishlist-slice";
 const Wishlist = (props) => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.wishlist.wishlists);
+
+  useEffect(() => {
+    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/wishlist.json", {
+      method: "PUT",
+      body: JSON.stringify(items),
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Sending wishlist data failed!");
+      }
+    });
+  }, [items]);
+
   const cartItemRemoveHandler = (id) => {
     dispatch(wishlistActions.removeItem(id));
   };

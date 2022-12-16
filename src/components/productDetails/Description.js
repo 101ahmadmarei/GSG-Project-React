@@ -20,8 +20,8 @@ const Description = () => {
         <p>{text}</p>
         <div className={style.images}>
           {images.map((item, index) => (
-            <div>
-              <img src={item.img} alt="img" key={index} />
+            <div key={index}>
+              <img src={item.img} alt="img" />
               <p>{item.desc}</p>{" "}
             </div>
           ))}

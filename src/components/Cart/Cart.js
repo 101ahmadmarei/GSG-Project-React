@@ -18,10 +18,22 @@ const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const items = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   // const cartCtx = useContext(CartContext);
 
   // const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = items.length > 0;
+  useEffect(() => {
+    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/cart.json", {
+      method: "PUT",
+      body: JSON.stringify({ totalAmount, items, totalQuantity }),
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Sending cart data failed!");
+      }
+    });
+  }, [totalAmount, items]);
 
   const checkOrderHandler = () => {
     setIsCheckout(true);

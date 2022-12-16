@@ -19,3 +19,13 @@
   line-height: 25px;
   margin-right: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .review {
+    flex-direction: column;
+    height: auto;
+  }
+  .review .Button {
+    margin-top: 10px;
+  }
+}

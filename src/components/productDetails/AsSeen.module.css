@@ -1,6 +1,7 @@
 .asSeen {
   padding: 0 150px;
   margin-bottom: 50px;
+  /* width: 80%; */
 }
 
 .images {
@@ -9,7 +10,23 @@
   align-items: center;
   margin-top: 20px;
   width: 100%;
+  /* flex-wrap: nowrap; */
 }
 .images img {
   width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .asSeen {
+    padding: 0 50px;
+  }
+  .images {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+  }
+  .images img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

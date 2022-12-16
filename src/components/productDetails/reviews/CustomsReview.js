@@ -15,8 +15,8 @@ const CustomsReview = () => {
     <div>
       <h3>Top Customers Reviews</h3>
       <div className={style.comments}>
-        {reviews.map((review) => (
-          <div className={style.comment}>
+        {reviews.map((review, i) => (
+          <div className={style.comment} key={i}>
             <Rating rate={review.rating} />
             <p className={style.name}>
               By {review.customerName}{" "}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -6,6 +6,12 @@ import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import useHttp from "../../../hooks/use-http";
+import LoadingSpinner from "../../../UI/LoadingSpinner";
+import { useParams } from "react-router-dom";
+// import LoadingButton from "@mui/lab/LoadingButton";
+import SendIcon from "@mui/icons-material/Send";
+
+import classes from "./FormComments.module.css";
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,13 +27,34 @@ const FormComments = ({ open, setOpen }) => {
   const handleClose = () => setOpen(false);
   const [value, setValue] = useState(2);
   const [review, setReview] = useState("");
-
-  const handleReview = (event) => {
-    console.log(value, review);
-    setReview("");
-    setValue(2);
-    setOpen(false);
+  const [name, setName] = useState("");
+  const params = useParams();
+  const { productId } = params;
+  const { sendRequest, isLoading } = useHttp();
+  const submitReview = (event) => {
+    let date = new Date();
+    const month = date.toLocaleString("default", { month: "long" });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    date = `on ${month} ${day},${year}`;
+    const comment = { rating: value, review, name, date };
+    sendRequest({
+      url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/reviews/${productId}.json`,
+      method: "POST",
+      body: comment,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   };
+  useEffect(() => {
+    if (!isLoading) {
+      setReview("");
+      setValue(2);
+      setName("");
+      setOpen(false);
+    }
+  }, [isLoading]);
   return (
     <Modal
       open={open}
@@ -35,6 +62,12 @@ const FormComments = ({ open, setOpen }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
+      {/* {isLoading && (
+        <div className={classes.loading}>
+          <LoadingSpinner />
+        </div>
+      )} */}
+
       <Box sx={style}>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           Rate this product and write a review to help others make a decision to
@@ -49,6 +82,17 @@ const FormComments = ({ open, setOpen }) => {
           }}
           size="large"
         />
+        <TextField
+          id="name"
+          label="Name..."
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          //   defaultValue="Default Value"
+          sx={{ display: "block" }}
+          fullWidth
+          margin="dense"
+          required
+        />
 
         <TextField
           id="outlined-textarea"
@@ -60,7 +104,10 @@ const FormComments = ({ open, setOpen }) => {
           //   defaultValue="Default Value"
           sx={{ display: "block" }}
           fullWidth
+          margin="dense"
+          required
         />
+
         <Button
           variant="outlined"
           sx={{ mt: 2, ml: 2 }}
@@ -72,7 +119,8 @@ const FormComments = ({ open, setOpen }) => {
         <Button
           variant="contained"
           sx={{ mt: 2, ml: 2 }}
-          onClick={handleReview}
+          onClick={submitReview}
+          type="submit"
         >
           {" "}
           Submit

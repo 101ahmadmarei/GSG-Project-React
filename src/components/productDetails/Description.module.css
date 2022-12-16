@@ -55,3 +55,38 @@
 .footer p {
   width: 60%;
 }
+
+@media screen and (max-width: 768px) {
+  .description {
+    margin-bottom: 80px;
+  }
+  .description .first {
+    height: 360px;
+  }
+  .description article {
+    padding: 0 50px;
+  }
+  .description article p {
+    width: 100%;
+    text-align: center;
+  }
+  .description article .images {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+  }
+  .description article .images div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .footer {
+    height: 200px;
+    /* width: calc(100% - 100px); */
+  }
+  .footer p {
+    width: 100%;
+    padding: 0 50px;
+
+    text-align: center;
+  }
+}
