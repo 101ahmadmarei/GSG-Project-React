@@ -27,7 +27,7 @@ const ProductDetails = () => {
     };
     fetchProduct(
       {
-        url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/products/${productId}.json`,
+        url: `https://test-4c533-default-rtdb.firebaseio.com/products/${productId}.json`,
       },
       transformData
     );
@@ -47,7 +47,7 @@ const ProductDetails = () => {
 
     fetchProduct(
       {
-        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/products.json",
+        url: "https://test-4c533-default-rtdb.firebaseio.com/products.json",
       },
       transformData
     );

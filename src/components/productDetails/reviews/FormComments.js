@@ -49,7 +49,7 @@ const FormComments = ({ open, setOpen, onAddedComment }) => {
     setFormIsValid(true);
     const comment = { rating: value, review, name, date };
     sendRequest({
-      url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/reviews/${productId}.json`,
+      url: `https://test-4c533-default-rtdb.firebaseio.com/reviews/${productId}.json`,
       method: "POST",
       body: comment,
       headers: {

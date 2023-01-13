@@ -22,7 +22,7 @@ const Layout = (props) => {
 
     sendRequest(
       {
-        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/cart.json",
+        url: "https://test-4c533-default-rtdb.firebaseio.com/cart.json",
       },
       replaceData
     );
@@ -30,14 +30,12 @@ const Layout = (props) => {
   useEffect(() => {
     console.log("useEffect");
     const replaceData = (data) => {
-      console.log("🚀 ~ file: Layout.js:33 ~ replaceData ~ data", data);
-
       dispatch(wishlistActions.replaceWishlist(data));
     };
 
     sendRequest(
       {
-        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/wishlist.json",
+        url: "https://test-4c533-default-rtdb.firebaseio.com/wishlist.json",
       },
       replaceData
     );

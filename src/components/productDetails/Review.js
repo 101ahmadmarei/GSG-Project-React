@@ -27,7 +27,7 @@ const Review = () => {
   useEffect(() => {
     sendRequest(
       {
-        url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/reviews/${productId}.json`,
+        url: `https://test-4c533-default-rtdb.firebaseio.com/reviews/${productId}.json`,
       },
       allComments
     );
@@ -36,7 +36,7 @@ const Review = () => {
     setAddedComment(true);
     sendRequest(
       {
-        url: `https://gsgstore-e51b4-default-rtdb.firebaseio.com/reviews/${productId}.json`,
+        url: `https://test-4c533-default-rtdb.firebaseio.com/reviews/${productId}.json`,
       },
       allComments
     );

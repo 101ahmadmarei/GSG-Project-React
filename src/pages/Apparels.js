@@ -29,7 +29,7 @@ const Apparels = () => {
 
     fetchProducts(
       {
-        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/products.json",
+        url: "https://test-4c533-default-rtdb.firebaseio.com/products.json",
       },
       transformData
     );

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
@@ -9,9 +9,27 @@ import SignUp from "./pages/SignUp";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthContext from "./store/auth-context";
 import PageNotFound from "./pages/NotFound";
+import useHttp from "./hooks/use-http";
+import { Products } from "./ProductsJSON";
 const App = () => {
   const authCtx = useContext(AuthContext);
+  const { sendRequest } = useHttp();
 
+  // useEffect(() => {
+  //   for (var key in Products) {
+  //     sendRequest(
+  //       {
+  //         url: "https://test-4c533-default-rtdb.firebaseio.com/products.json",
+  //         method: "POST",
+  //         body: Products[key],
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       },
+  //       () => {}
+  //     );
+  //   }
+  // }, [sendRequest]);
   return (
     <Layout>
       <Routes>
@@ -31,26 +49,3 @@ const App = () => {
 };
 
 export default App;
-/*
- useEffect(() => {
-    const transformData = (data) => {
-      const loadedProducts = data.map((item) => {
-        return {
-          id: item.id,
-          image: item.image,
-          category: item.category,
-          title: item.title,
-          description: item.description,
-          price: item.price,
-          rating: item.rating,
-        };
-      });
-      dispatch(detailsCardActions.apparels(loadedProducts));
-    };
-    fetchApparels(
-      {
-        url: "https://fakestoreapi.com/products",
-      },
-      transformData
-    );
-  }, [fetchApparels, dispatch]);*/

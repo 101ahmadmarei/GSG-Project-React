@@ -24,7 +24,7 @@ const Cart = (props) => {
   // const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = items.length > 0;
   useEffect(() => {
-    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://test-4c533-default-rtdb.firebaseio.com/cart.json", {
       method: "PUT",
       body: JSON.stringify({ totalAmount, items, totalQuantity }),
       headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ const Cart = (props) => {
         throw new Error("Sending cart data failed!");
       }
     });
-  }, [totalAmount, items]);
+  }, [totalAmount, items, totalQuantity]);
 
   const checkOrderHandler = () => {
     setIsCheckout(true);
@@ -63,7 +63,7 @@ const Cart = (props) => {
     };
     sendRequest(
       {
-        url: "https://gsgstore-e51b4-default-rtdb.firebaseio.com/orders.json",
+        url: "https://test-4c533-default-rtdb.firebaseio.com/orders.json",
         method: "POST",
         body: {
           user: userData,

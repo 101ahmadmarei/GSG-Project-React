@@ -31,7 +31,7 @@ const Quantity = () => {
   );
 
   useEffect(() => {
-    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://test-4c533-default-rtdb.firebaseio.com/cart.json", {
       method: "PUT",
       body: JSON.stringify({ totalAmount, items: cartItems, totalQuantity }),
       headers: { "Content-Type": "application/json" },
@@ -42,7 +42,7 @@ const Quantity = () => {
     });
   }, [totalQuantity, totalAmount, cartItems]);
   useEffect(() => {
-    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/wishlist.json", {
+    fetch("https://test-4c533-default-rtdb.firebaseio.com/wishlist.json", {
       method: "PUT",
       body: JSON.stringify({
         wishlists: wishlistItems,

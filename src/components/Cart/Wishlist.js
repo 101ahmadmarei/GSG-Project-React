@@ -9,18 +9,18 @@ import { wishlistActions } from "../../store/wishlist-slice";
 const Wishlist = (props) => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.wishlist.wishlists);
-
+  const totalQuantity = useSelector((state) => state.wishlist.totalQuantity);
   useEffect(() => {
-    fetch("https://gsgstore-e51b4-default-rtdb.firebaseio.com/wishlist.json", {
+    fetch("https://test-4c533-default-rtdb.firebaseio.com/wishlist.json", {
       method: "PUT",
-      body: JSON.stringify(items),
+      body: JSON.stringify({ items, totalQuantity }),
       headers: { "Content-Type": "application/json" },
     }).then((response) => {
       if (!response.ok) {
         throw new Error("Sending wishlist data failed!");
       }
     });
-  }, [items]);
+  }, [items, totalQuantity]);
 
   const cartItemRemoveHandler = (id) => {
     dispatch(wishlistActions.removeItem(id));

@@ -12,7 +12,7 @@ const cartSlice = createSlice({
     replaceCart(state, action) {
       state.totalAmount = action.payload.totalAmount;
       state.totalQuantity = action.payload.totalQuantity;
-      state.items = action.payload.items;
+      state.items = action.payload.items || [];
     },
     openCart(state, action) {
       document.body.style.overflow = "hidden";
