@@ -12,8 +12,8 @@ https://gsg-react-project.web.app/Home
 * Incorporates React Router for dynamic routing
 * Integrates Redux Toolkit for global state management
 * Optimized for performance with code splitting and lazy loading
-* Connects to Firebase using REST API for real-time data management
-* Implements Firebase Authentication for secure user login and signup
+* #### Connects to Firebase using REST API for real-time data management
+* #### Implements Firebase Authentication for secure user login and signup
 
 ## Screenshots
 ### login & Signup page
@@ -28,6 +28,9 @@ This project uses Firebase Authentication for secure user login and signup. User
 
 ## Firebase Real-time Database
 This project uses Firebase Real-time Database to store and retrieve data in real-time. The database is connected using REST API, providing a fast and secure way to manage data.
+
+## Why my project ?
+Because the use of Firebase's REST API for real-time data management allows for fast and efficient updates and syncing of information, making it a highly responsive and user-friendly application. The implementation of Firebase Authentication for secure user login and signup also adds an important layer of security to the project, ensuring that only authorized users have access to sensitive information. Overall, these features make your project stand out by providing a robust and reliable user experience.
 
 ## Built With
 * React
