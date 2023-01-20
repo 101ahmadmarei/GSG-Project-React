@@ -10,8 +10,9 @@ const wishlistSlice = createSlice({
       state.showWishlist = false;
     },
     replaceWishlist(state, action) {
-      state.wishlists = action.payload.wishlists || [];
-      state.totalQuantity = action.payload.totalQuantity;
+      console.log(action.payload);
+      state.wishlists = action.payload.items || [];
+      state.totalQuantity = action.payload.totalQuantity || 0;
     },
 
     addItem(state, action) {
