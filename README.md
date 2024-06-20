@@ -5,6 +5,9 @@ This app is a fully-functional e-commerce website built with React. Users can br
 ### Demo
 https://gsg-react-project.web.app/Home
 
+## Note 📛
+The app may encounter some issues due to the expiration of the Firebase API used in this project. 
+
 ## Features
 
 * Utilizes React hooks for efficient component management
